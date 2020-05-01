@@ -23,14 +23,24 @@ namespace Day5_Arrays
             Console.WriteLine("Which number are you looking for?");
             int position = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Positions in array:");
+            int occurances = 0;
 
             for (int i =0; i<randoms.Length; i++)
             {
                 if (randoms[i] == position)
-                    Console.Write(i);
+                {
+                    Console.Write(i + " ");
+                    occurances++;
+                }                      
+            }
+
+            if(occurances==0)
+            {
+                Console.WriteLine("Hm, looks like your number wasn't in this array :(");
             }
             
         }
+
         static void Average()
         {
             int sum = 0;
