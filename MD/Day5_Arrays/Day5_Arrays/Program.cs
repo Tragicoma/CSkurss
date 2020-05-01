@@ -6,7 +6,8 @@ namespace Day5_Arrays
     {
         static void Main(string[] args)
         {
-            ArrayInput();
+            //ArrayInput();
+            Average();
         }
 
         static void ArrayInput()
@@ -27,6 +28,22 @@ namespace Day5_Arrays
             }
             Console.Write("The sum of your numbers is: " + sum);
 
+        }
+
+        static void Average()
+        {
+            int sum = 0;
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            for(int i=0; i< array.Length; i++)
+            {
+                sum = sum + array[i];
+            }
+            
+            int average = sum / array.Length;
+            Console.WriteLine("The sum is: " + sum);
+            Console.WriteLine("The average is: " + average);
+            
         }
     }
 }
