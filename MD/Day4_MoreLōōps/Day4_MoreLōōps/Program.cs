@@ -6,7 +6,35 @@ namespace Day4_MoreLōōps
     {
         static void Main(string[] args)
         {
-            GuesssTheNumber();
+            //GuesssTheNumber();
+            //Exponent(2,3);
+            NumberPyramid();
+        }
+
+        static void NumberPyramid()
+        {
+            for (int skaitlis = 1, rindas = 1; skaitlis <= 10; rindas++)
+            {
+                for(int i = 1; i <= rindas; skaitlis++,i++ )
+                {
+                    Console.Write(skaitlis + " ");
+                }
+                Console.WriteLine();
+            }
+          
+        }
+        
+
+        static void Exponent(int a, int b)
+        {
+            int result = a;
+            
+            for (int i = 1; i < b; i++)
+            {                
+                result = result * a;
+            }
+
+            Console.WriteLine(result);
         }
 
         static void GuesssTheNumber()
