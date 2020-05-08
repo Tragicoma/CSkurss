@@ -7,7 +7,13 @@ namespace Day6_Classes
 {
     public class Task
     {
-        public static void stars(int a)
+        private static int a = 0;
+        private static int b = 0;
+
+
+
+
+public static void stars(int a)
         { 
         for(int i = 0; i<a; i++)
             {
