@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Day7_Objects
 {
@@ -6,11 +7,24 @@ namespace Day7_Objects
     {
         static void Main(string[] args)
         {
-            Shape sh1 = new Shape(23, 33, 33);
-            Shape sh2 = new Shape(23, 44, 33, 33);
-            sh1.Print();
-            sh2.Perimeter();
+            List<string> list = new List<string>();
 
+            Console.WriteLine("Add words to the list(type 'stop' to get list");
+            string input = "";
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (input == "stop")
+                    break;
+                list.Add(input);
+                
+
+            }
+            Console.WriteLine();
+            foreach (string word in list)
+            {
+                Console.WriteLine(word);
+            }
 
         }
         public static void StudentForm()
@@ -32,6 +46,14 @@ namespace Day7_Objects
 
             st1.Print();
             st2.Print();
+        }
+
+        static void CW2()
+        {
+            Shape sh1 = new Shape(23, 33, 33);
+            Shape sh2 = new Shape(23, 44, 33, 33);
+            sh1.Print();
+            sh2.Perimeter();
         }
     }
 }
