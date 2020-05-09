@@ -7,23 +7,35 @@ namespace Day7_Objects
     {
         static void Main(string[] args)
         {
-            List<string> list = new List<string>();
-
-            Console.WriteLine("Add words to the list(type 'stop' to get list");
-            string input = "";
+            List<int> randomi = new List<int>();
+            Random random = new Random();
+            for(int i = 0; i<11; i++)
+            {
+                randomi.Add(random.Next(1, 101));
+            }
+            Console.WriteLine("MENU:\nType LIST to print out the random numbers;" +
+                "\nType REMOVE to remove a number by it's index;\nType EXIT to leave;");
             while (true)
             {
-                input = Console.ReadLine();
-                if (input == "stop")
-                    break;
-                list.Add(input);
-                
-
-            }
-            Console.WriteLine();
-            foreach (string word in list)
-            {
-                Console.WriteLine(word);
+                string input = Console.ReadLine().ToUpper();
+                if (input == "LIST")
+                {
+                    foreach (int num in randomi)
+                        Console.WriteLine(num);
+                }
+                else if (input == "REMOVE")
+                {
+                    Console.WriteLine("Index of the number you would like to remove:");
+                    int index = Convert.ToInt32(Console.ReadLine());
+                    if (index <= randomi.Count && index >= 0)
+                        randomi.RemoveAt(index);
+                    else
+                        Console.WriteLine("Wrong input!");
+                }
+                else if (input == "EXIT")
+                {
+                    Environment.Exit(0);
+                }
             }
 
         }
@@ -54,6 +66,28 @@ namespace Day7_Objects
             Shape sh2 = new Shape(23, 44, 33, 33);
             sh1.Print();
             sh2.Perimeter();
+        }
+
+        static void CW3()
+        {
+            List<string> list = new List<string>();
+
+            Console.WriteLine("Add words to the list(type 'stop' to get list");
+            string input = "";
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (input == "stop")
+                    break;
+                list.Add(input);
+
+
+            }
+            Console.WriteLine();
+            foreach (string word in list)
+            {
+                Console.WriteLine(word);
+            }
         }
     }
 }
