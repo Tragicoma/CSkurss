@@ -36,6 +36,11 @@ namespace Day7_Objects
                 {
                     Environment.Exit(0);
                 }
+                else
+                {
+                    Console.WriteLine("Something's not right, try again..");
+
+                }
             }
 
         }
