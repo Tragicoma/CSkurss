@@ -6,27 +6,20 @@ namespace Day6_Classes
 {
     public class Student
     {
-        private string name;
-        private string surname;
-        private int course;
+        private static string name;
+        private static string surname;
+        private static int course;
 
-        public Student(string name, string surname, int course)
-        {
-            this.name = name;
-            this.surname = surname;
-            this.course = course;
-
-        }
-
-        public void SetName(string n)
+       
+        public static void SetName(string n)
         {
             name = n.ToUpper();
         }
-        public void SetSurname(string sn)
+        public static void SetSurname(string sn)
         {
             surname = sn.ToUpper();
         }
-        public void SetCourse(int c)
+        public static void SetCourse(int c)
         {
             if(c!=1 && c!=2 && c!=3)
             {
@@ -37,7 +30,7 @@ namespace Day6_Classes
             course = c;
         }
 
-        public void Print()
+        public static void Print()
     {
         Console.WriteLine("Students name: " + name);
         Console.WriteLine("Students surname: " + surname);
