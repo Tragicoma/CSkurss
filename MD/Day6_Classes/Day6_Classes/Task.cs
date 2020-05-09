@@ -12,8 +12,25 @@ namespace Day6_Classes
 
 
 
+        public static void SetA(int inp)
+        {
+            a = inp;
+        }
 
-public static void stars(int a)
+        public static void SetB(int inp)
+        {
+            b = inp;
+        }
+        public static int GetA()
+        {
+            return a;
+        }
+        public static int GetB()
+        {
+            return b;
+        }
+
+        public static void stars(int a)
         { 
         for(int i = 0; i<a; i++)
             {

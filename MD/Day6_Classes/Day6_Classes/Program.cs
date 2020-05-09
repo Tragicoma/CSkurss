@@ -7,8 +7,8 @@ namespace Day6_Classes
         static void Main(string[] args)
         {
             //ClassTask1();
-            //ClassTask2();
-            HW1();
+            ClassTask2();
+            //HW1();
         }
 
         static void ClassTask1()
@@ -22,7 +22,11 @@ namespace Day6_Classes
         {
             Console.WriteLine("Hello!\n Please, insert two numbers:");
             int inputA = Convert.ToInt32(Console.ReadLine());
-            
+            int inputB = Convert.ToInt32(Console.ReadLine());
+            Task.SetA(inputA);
+            Task.SetB(inputB);
+            Console.WriteLine(Task.GetA()+Task.GetB());
+
         }
 
        public static void HW1()
