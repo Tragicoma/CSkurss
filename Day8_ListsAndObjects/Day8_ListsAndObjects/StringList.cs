@@ -21,7 +21,7 @@ namespace Day8_ListsAndObjects
             while(choice!="0")
             { 
               Console.WriteLine("MENU \n1 - Print current list; \n2 - Add a string to  the list; \n" +
-              "3 - Remove by Index; \n0 - Exit; \n4 - Find string");
+              "3 - Remove by Index; \n4 - Find string; \n0 - Exit; ");
               choice = Console.ReadLine();
 
                 switch (choice)
@@ -90,7 +90,6 @@ namespace Day8_ListsAndObjects
         {
             Console.WriteLine("What are you looking for?");
             string input = Console.ReadLine();
-            Console.WriteLine("What are you looking for?");
             Console.WriteLine("We found: ");
             int finds = 0;
             for (int i = 0; i < listOfValues.Count; i++)
@@ -104,6 +103,7 @@ namespace Day8_ListsAndObjects
             if (finds == 0)
             {
                 Console.Write("Nothing :(");
+                Console.WriteLine();
             }
 
         }
