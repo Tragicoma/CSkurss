@@ -7,9 +7,73 @@ namespace Day7_Objects
     {
         static void Main(string[] args)
         {
+            MD();
+
+        }
+
+        static void MD()
+        {
+            Random random = new Random();
+
+            List<int> numbers = new List<int>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                numbers.Add(random.Next(100));
+            }
+
+            String choice = "";
+            while (choice != "0")
+            {
+
+                Console.WriteLine("1- izvadit sarakstu");
+                Console.WriteLine("2- Dzest");
+                Console.WriteLine("0- iziet");
+
+                choice = Console.ReadLine();
+                
+
+                switch (choice)
+                {
+                    case "1":
+                        foreach (int a in numbers)
+                        {
+                            Console.WriteLine(a);
+                        }
+                        break;
+
+                    case "2":
+                        Console.WriteLine("Kuru dzest?");
+                        string input = Console.ReadLine();
+                        try 
+                        {
+                            Convert.ToInt32(input);
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            break;
+                        }
+                        int toDelete = Convert.ToInt32(input);
+                        numbers.RemoveAt(toDelete);
+                        break;
+                    case "0":
+                        break;
+                    default:
+                        Console.WriteLine("nepareiza ievade");
+                        break;
+
+                }
+            }
+
+
+        }
+
+        static void  CW4()
+        {
             List<int> randomi = new List<int>();
             Random random = new Random();
-            for(int i = 0; i<11; i++)
+            for (int i = 0; i < 11; i++)
             {
                 randomi.Add(random.Next(1, 101));
             }
@@ -42,7 +106,6 @@ namespace Day7_Objects
 
                 }
             }
-
         }
         public static void StudentForm()
         {
