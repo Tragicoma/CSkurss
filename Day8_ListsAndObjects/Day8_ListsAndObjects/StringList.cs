@@ -7,11 +7,12 @@ namespace Day8_ListsAndObjects
 {
     class StringList
     {
-        private List<String> listOfValues;
+        private List<String> listOfValues; 
 
         public StringList()
         {
             listOfValues = new List<String>();
+            
         }
 
         public void Task1()
@@ -20,7 +21,7 @@ namespace Day8_ListsAndObjects
             while(choice!="0")
             { 
               Console.WriteLine("MENU \n1 - Print current list; \n2 - Add a string to  the list; \n" +
-              "3 - Remove by Index; \n0 - Exit;");
+              "3 - Remove by Index; \n0 - Exit; \n4 - Find string");
               choice = Console.ReadLine();
 
                 switch (choice)
@@ -34,6 +35,9 @@ namespace Day8_ListsAndObjects
                         break;
                     case "3":
                         Delete();
+                        break;
+                    case "4":
+                        Find();
                         break;
                     case "0":
                         break;
@@ -80,6 +84,28 @@ namespace Day8_ListsAndObjects
                 Console.WriteLine(e.Message);
             }
             listOfValues.RemoveAt(index);
+        }
+
+        private void Find()
+        {
+            Console.WriteLine("What are you looking for?");
+            string input = Console.ReadLine();
+            Console.WriteLine("What are you looking for?");
+            Console.WriteLine("We found: ");
+            int finds = 0;
+            for (int i = 0; i < listOfValues.Count; i++)
+            {
+                if (listOfValues[i].Contains(input))
+                {
+                    Console.WriteLine(i + "( " + listOfValues[i] + " )");
+                    finds++;
+                }
+            }
+            if (finds == 0)
+            {
+                Console.Write("Nothing :(");
+            }
+
         }
     }
 }
