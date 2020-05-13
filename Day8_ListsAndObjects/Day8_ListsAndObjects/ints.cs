@@ -37,10 +37,6 @@ namespace Day8_ListsAndObjects
             Print();
         }
 
-        public bool IsSame(List<int> a, List<int> b )
-        {
-             return a.SequenceEqual(b);
-        }
         public void Print()
         {
             foreach (int n in numbers)
@@ -48,7 +44,12 @@ namespace Day8_ListsAndObjects
             Console.WriteLine();
         }
 
-     
+        public bool IsSame(List<int> a, List<int> b)
+        {
+            return a.SequenceEqual(b);
+        }
+
+
 
     }
 }

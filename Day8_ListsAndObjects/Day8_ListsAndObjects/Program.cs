@@ -14,7 +14,8 @@ namespace Day8_ListsAndObjects
             n1.AddFive();
             n2 = n1;
             n1.Reverse();
-            
+            n1.IsSame();
+
         }
 
        
