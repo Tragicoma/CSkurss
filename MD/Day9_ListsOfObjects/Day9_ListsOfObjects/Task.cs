@@ -29,10 +29,11 @@ namespace Day9_ListsOfObjects
                         break;
                     case "0":
                         break;
+                    default:
+                        break;
 
                 }
             }
-
 
         }
 
