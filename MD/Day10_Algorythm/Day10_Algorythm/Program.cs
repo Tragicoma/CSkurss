@@ -29,14 +29,15 @@ namespace Day10_Algorythm
                 }
             }
 
-            static void Print(int[] a)
-            {
-                foreach (int num in a)
-                {
-                    Console.Write(num + " ");
-                }
-            }
+            
             Print(array);
+        }
+        static void Print(int[] a)
+        {
+            foreach (int num in a)
+            {
+                Console.Write(num + " ");
+            }
         }
     }
 }
