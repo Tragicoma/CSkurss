@@ -6,9 +6,10 @@ namespace Day9_ListsOfObjects
     {
         static void Main(string[] args)
         {
+            
             Task task = new Task();
-            task.Task1();
-
+            //task.Task1();
+            task.Task2();
         }
     }
 }
