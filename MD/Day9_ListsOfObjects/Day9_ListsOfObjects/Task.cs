@@ -48,6 +48,7 @@ namespace Day9_ListsOfObjects
             Console.WriteLine("1 - Color, 2 - Brand, 3 - Amount of doors, 4 - Back");
             
             string input = Console.ReadLine();
+            bool found = false;
             switch (input)
             {
                 case "1":
@@ -56,7 +57,10 @@ namespace Day9_ListsOfObjects
                     for(int i=0; i<CarList.Count; i++)
                     {
                         if(CarList[i].GetColor().ToLower().Contains(keyC)) // Contains, what if color is "baby pink" or "ruby red"
-                        { CarList[i].Print(); }
+                        { 
+                            CarList[i].Print();
+                            found = true;
+                        }
                     }
                     break;
                 case "2":
@@ -65,7 +69,10 @@ namespace Day9_ListsOfObjects
                     for (int i = 0; i < CarList.Count; i++)
                     {
                         if (CarList[i].GetBrand().ToLower() == keyB)
-                        { CarList[i].Print(); }
+                        { 
+                            CarList[i].Print();
+                            found = true;
+                        }
                     }
 
                     break;
@@ -77,7 +84,10 @@ namespace Day9_ListsOfObjects
                     for (int i = 0; i < CarList.Count; i++)
                     {
                         if (CarList[i].GetDoors() == keyD)
-                        { CarList[i].Print(); }
+                        { 
+                            CarList[i].Print();
+                            found = true;
+                        }
                     }
                     break;
                 case "4":
@@ -85,8 +95,12 @@ namespace Day9_ListsOfObjects
                 default:
                     Console.WriteLine("Wrong input, try again...");
                     break;
-
+                    
             }
+            Console.WriteLine("------------------");
+            if (found == false)
+                Console.WriteLine("No such cars :(");
+            Console.WriteLine("------------------");
         }
         public void AddCar()
         {

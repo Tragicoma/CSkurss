@@ -9,7 +9,7 @@ namespace Day9_ListsOfObjects
             
             Task task = new Task();
             //task.Task1();
-            task.Task2();
+            task.CarHomework();
         }
     }
 }
