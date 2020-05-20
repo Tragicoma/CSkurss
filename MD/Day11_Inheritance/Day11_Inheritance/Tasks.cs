@@ -32,7 +32,9 @@ namespace Day11_Inheritance
                         CountEmployees();
                             if(p >=2 && d>= 1 && m >= 1)
                         {
-                            Console.WriteLine("Nice! You have enough employees\n of each proffesion to make a team :) ");
+                            Console.WriteLine("---------------------------------------");
+                            Console.WriteLine("Nice! You have enough employees\nof each proffesion to make a team :) ");
+                            Console.WriteLine("---------------------------------------");
                         }
                             else
                         {
