@@ -8,35 +8,42 @@ namespace Day10_Algorythm
 
         static void Main(string[] args)
         {
-            //BubbleSort();
-            //InsertionSort();
-            TimeMeasure();
-        }
-        static void TimeMeasure()
-        {
+            Random random = new Random();
+            int[] array = new int[100000];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 41);
+            }
+            
+            int[] array2 = new int[100000];
+            for (int i =0;i<array2.Length;i++)
+            {
+                array2[i] = array[i];
+            }
+            
 
             var time1 = DateTime.Now;
-            BubbleSort();
+            BubbleSort(array);
+            
             var time2 = DateTime.Now;
             var diff1 = (time2 - time1).TotalSeconds;
             Console.WriteLine(time1);
             Console.WriteLine(time2);
             Console.WriteLine(diff1);
-
-
+            
+            var time3 = DateTime.Now;
+            InsertionSort(array2);
+            var time4 = DateTime.Now;
+            Console.WriteLine(time3);
+            Console.WriteLine(time4);
+            Console.WriteLine((time4-time3).TotalSeconds); 
+            //Insertion method ends up being 5x faster
         }
+       
 
-        static void InsertionSort()
+        static void InsertionSort(int[] array)
         {
-            Random random = new Random();
-            int[] array = new int[100000];
-            for (int i = 0; i < 10; i++)
-            {
-                array[i] = random.Next(1, 41);
-            }
-            Print(array);
-
-
+            
             int j, inserted;
             
             for(int i = 1; i<array.Length; i++ )
@@ -52,20 +59,12 @@ namespace Day10_Algorythm
                 }
                 array[j + 1] = inserted;
             }
-            Print(array);
-        }
-        static void BubbleSort()
-        {
-            Random random = new Random();
-            int[] array = new int[55000];
-            int cup;
-            for (int i = 0; i < 10; i++)
-            {
-                array[i] = random.Next(1, 41);
-            }
-            
-            Console.WriteLine();
 
+        }
+        static void BubbleSort(int[] array)
+        {
+
+            int cup;
             for (int i = 0; i < array.Length - 1; i++)
             {
                 for (int j = 0; j < array.Length - 1; j++)
@@ -82,10 +81,7 @@ namespace Day10_Algorythm
             
         }
 
-        static void Array()
-        {
-
-        }
+      
         static void Print(int[] a)
         {
             foreach (int num in a)
