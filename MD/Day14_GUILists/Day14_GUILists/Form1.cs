@@ -16,25 +16,46 @@ namespace Day14_GUILists
         {
             InitializeComponent();
         }
+        
         bool selected = false;
+        ListView oldList = new ListView();
+    
         private void btnClick_Click(object sender, EventArgs e)
         {
             bool print = true;
+            
 
             if(textBox.Text.Length<1)
             {
                 print = false;
             }
 
-            if(print&&!selected)
+            foreach(ListViewItem i in list.Items)
             {
-                list.Items.Add(textBox.Text);
-            }
-            else if(selected)
-            {
-                list.SelectedItems[0].Text = textBox.Text;
+                if(i.Text==textBox.Text)
+                {
+                    print = false;
+                    RedText.Text = "This item is already in the list!";
+                }
             }
 
+            if(print&&!selected)
+            {
+                CopyList();
+                list.Items.Add(textBox.Text);
+                RedText.Text = "";
+                textBox.Text = "";
+
+            }
+            else if(print&&selected)
+            {
+                CopyList();
+                list.SelectedItems[0].Text = textBox.Text;
+                RedText.Text = "";
+                textBox.Text = "";
+                selected = false;
+            }
+            
         }
 
         private void list_MouseClick(object sender, MouseEventArgs e)
@@ -45,7 +66,39 @@ namespace Day14_GUILists
 
         private void list_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            CopyList();
             list.Items.Remove(list.SelectedItems[0]);
+            selected = false;
+        }
+        //Replaces listview with last copy - UNDO
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            
+            list.Items.Clear();
+            foreach (ListViewItem item in oldList.Items)
+            {
+                list.Items.Add((ListViewItem)item.Clone());
+            }
+            RedText.Text = "";
+        }
+
+        //Copy list for 1x undo purpose
+        public void CopyList()
+        {
+            oldList.Items.Clear();
+            foreach(ListViewItem item in list.Items)
+            {
+                oldList.Items.Add((ListViewItem)item.Clone());
+            }
+
+        }
+        //Delete multiple
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in list.SelectedItems)
+            {
+                item.Remove();
+            }
         }
     }
 }
