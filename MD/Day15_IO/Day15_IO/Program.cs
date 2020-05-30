@@ -10,8 +10,16 @@ namespace Day15_IO
     {
         static void Main(string[] args)
         {
+
+            //FileManager.Read("murmur");
+            //FileManager.WriteTo("murmur2");
+            FileManager.SwapAndNew("murmur");
+        }
+
+        public static void Uzd1()
+        {
             string input = "";
-            while (input!="0")
+            while (input != "0")
             {
                 Console.WriteLine("Choose option:");
                 Console.WriteLine("Create new file - 1");
@@ -19,13 +27,13 @@ namespace Day15_IO
                 Console.WriteLine("Edit file - 3");
                 Console.WriteLine("Exit - 0");
                 input = Console.ReadLine();
-                
-                if (input=="1")
+
+                if (input == "1")
                 {
-                    
+
                     Console.WriteLine("Start writing your file... \nIf you are done - type 'DONE'");
                     List<string> list = new List<string>();
-                    while(true)
+                    while (true)
                     {
                         string s = Console.ReadLine();
                         if (s.ToUpper() == "DONE")
@@ -36,7 +44,7 @@ namespace Day15_IO
                     Console.WriteLine("Overwite existing file - 1");
                     Console.WriteLine("Save as new file - 2");
                     string save = Console.ReadLine();
-                    while(true)
+                    while (true)
                     {
                         if (save == "1")
                         {
@@ -57,7 +65,7 @@ namespace Day15_IO
                     }
                 }
 
-                else if(input=="2")
+                else if (input == "2")
                 {
                     try
                     {
@@ -66,10 +74,10 @@ namespace Day15_IO
                         Open(name);
                     }
                     catch
-                    { Console.WriteLine("Can't open this file :(");}
-          
+                    { Console.WriteLine("Can't open this file :("); }
+
                 }
-                else if(input == "3")
+                else if (input == "3")
                 {
 
                     Console.WriteLine("Enter file name:");
@@ -77,7 +85,7 @@ namespace Day15_IO
                     Edit(name);
                 }
 
-                else if(input == "0")
+                else if (input == "0")
                 {
                     Console.WriteLine("Bye, bye! :)");
                 }
@@ -85,7 +93,6 @@ namespace Day15_IO
                 {
                     Console.WriteLine("Not sure what you mean with that...");
                 }
-
             }
 
             static void SaveNew(string name, List<string> list)
@@ -126,6 +133,7 @@ namespace Day15_IO
                 Console.WriteLine("Type new input:");
                 vaardi[line] = Console.ReadLine();
                 StreamWriter sw = new StreamWriter(@"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day15_IO\" + name);
+
                 foreach (string s in vaardi)
                 {
                     sw.WriteLine(s);
