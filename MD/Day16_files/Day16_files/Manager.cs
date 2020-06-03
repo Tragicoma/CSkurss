@@ -32,9 +32,10 @@ namespace Day16_files
                 info[1] = student.getSurname();
                 info[2] = student.getCourse().ToString();
                 StreamWriter sw = new StreamWriter(fp, true);
-                sw.Write(info[0] + "\n");
-                sw.Write(info[1] + "\n");
-                sw.Write(info[2] + "\n");
+                sw.Write(info[0] + ",");
+                sw.Write(info[1] + ",");
+                sw.Write(info[2]);
+                sw.Write("\n");
                 sw.Close();
                 
             }
