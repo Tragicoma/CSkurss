@@ -27,16 +27,14 @@ namespace Day16_files
             try
             {
                 string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList.txt";
-                List<string> info = new List<string>();
-                info.Add(student.getName());
-                info.Add(student.getSurname());
-                info.Add(student.getCourse().ToString());
-                info.Add("---");
-                StreamWriter sw = new StreamWriter(@"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList.txt", true);
-                foreach (string s in info)
-                {
-                    sw.WriteLine(s);
-                }
+                string[] info = new string[3];
+                info[0] = student.getName();
+                info[1] = student.getSurname();
+                info[2] = student.getCourse().ToString();
+                StreamWriter sw = new StreamWriter(fp, true);
+                sw.Write(info[0] + "\n");
+                sw.Write(info[1] + "\n");
+                sw.Write(info[2] + "\n");
                 sw.Close();
                 
             }
