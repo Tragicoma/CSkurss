@@ -26,13 +26,13 @@ namespace Day16_files
         {
             try
             {
-                string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList";
+                string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList.txt";
                 List<string> info = new List<string>();
                 info.Add(student.getName());
                 info.Add(student.getSurname());
                 info.Add(student.getCourse().ToString());
                 info.Add("---");
-                StreamWriter sw = new StreamWriter(@"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList", true);
+                StreamWriter sw = new StreamWriter(@"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList.txt", true);
                 foreach (string s in info)
                 {
                     sw.WriteLine(s);
@@ -50,7 +50,7 @@ namespace Day16_files
 
         public static void ReadStudentList()
         {
-            string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList";
+            string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList.txt";
             StreamReader sr = new StreamReader(fp);
             string line = sr.ReadLine();
             Console.WriteLine("-------------------");
