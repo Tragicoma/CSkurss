@@ -24,12 +24,21 @@ namespace Day16_files
 
         public static void SaveStudent(Student student)
         {
-            string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList";
-            string[] info = new string[3];
-            info[0] = student.getName();
-            info[1] = student.getSurname();
-            info[2] = student.getCourse().ToString();
-            File.WriteAllLines(fp, info);
+            try
+            {
+                string fp = @"D:\Jauna mape\C#_Maaciibas\C--kurss\MD\Day16_files\StudentList";
+                string[] info = new string[3];
+                info[0] = student.getName();
+                info[1] = student.getSurname();
+                info[2] = student.getCourse().ToString();
+                File.WriteAllLines(fp, info);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("I wasn't able to write to the file...");
+                Console.WriteLine(e);
+
+            }
         }
 
         public static void ReadStudentList()
