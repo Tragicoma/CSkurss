@@ -18,16 +18,17 @@ namespace Day16_files
             string s = Console.ReadLine();
             Console.WriteLine("Student Course(1-3):");
             int c = Convert.ToInt32(Console.ReadLine());
-
-            if(n.Length>1 && s.Length>1 && c>0 && c<4)
+            Student student;
+            if (n.Length>1 && s.Length>1 && c>0 && c<4)
             {
-                Student student = new Student(n, s, c);
+                student = new Student(n, s, c);
                 return student;
             }
             else
             {
                 Console.WriteLine("Wrong input...");
-                return null;
+                student = AddStudent();
+                return student;
             }
             
         }
