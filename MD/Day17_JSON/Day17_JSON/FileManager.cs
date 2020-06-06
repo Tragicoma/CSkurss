@@ -52,8 +52,9 @@ namespace Day17_JSON
             List<Student> students = JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(fp));
             return students;
         }
-        public static void PrintList(List<Student> list)
+        public static void PrintList()
         {
+            List<Student> list = GetList();
             foreach(Student s in list)
             {
                 s.print();

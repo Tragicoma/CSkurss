@@ -27,7 +27,7 @@ namespace Day17_JSON
                         FileManager.WriteList(students);
                         break;
                     case "2":
-                        FileManager.PrintList(students);
+                        FileManager.PrintList();
                         break;
                     case "0":
                         break;
