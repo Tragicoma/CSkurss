@@ -141,13 +141,15 @@ namespace Day16_files
             foreach (string s in list)
             {
                 index++;
-                Console.WriteLine($"({index})" + s);
+                if (s != "")
+                { Console.WriteLine($"({index})" + s); }
                 string[] studentData = s.Split(",");
                 if (studentData[0] != "")
                     students.Add(new Student(studentData[0], studentData[1], Convert.ToInt32(studentData[2])));
             }
             return students;
         }
+
          private static void SaveListFile(List<Student> stList,string fp)
         {
             try

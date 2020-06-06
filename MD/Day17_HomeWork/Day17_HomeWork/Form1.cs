@@ -16,5 +16,10 @@ namespace Day17_HomeWork
         {
             InitializeComponent();
         }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

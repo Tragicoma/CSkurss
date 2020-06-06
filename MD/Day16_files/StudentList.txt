@@ -1,10 +1,7 @@
 URURUR,BURURUR,3
-UUUU,TTTT,2
 Madara,Priede,3
 madara,priede,3
 dasdasda,22222222,2
 Madara,Priede,3
 madara,priede,3
 dasdasda,22222222,2
-Madara,Priede,3
-madara,priede,3

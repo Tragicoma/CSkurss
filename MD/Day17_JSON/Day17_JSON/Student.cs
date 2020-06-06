@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Day17_HomeWork
+namespace Day17_JSON
 {
     class Student
     {
@@ -13,9 +13,9 @@ namespace Day17_HomeWork
             setCourse(course);
         }
 
-        private String name;
-        private String surname;
-        private int course;
+        public String name;
+        public String surname;
+        public int course;
 
         public void setName(String name)
         {
