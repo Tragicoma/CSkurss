@@ -36,9 +36,7 @@ namespace Day17_JSON
             try
             {
                 String json = JsonConvert.SerializeObject(students);
-                StreamWriter sw = new StreamWriter(fp);
-                sw.Write(json);
-                sw.Close();
+                File.WriteAllText(fp, json);
             }
             catch(Exception e)
             {
