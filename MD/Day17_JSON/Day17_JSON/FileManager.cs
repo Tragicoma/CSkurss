@@ -35,7 +35,7 @@ namespace Day17_JSON
         {
             try
             {
-                String json = JsonConvert.SerializeObject(students);
+                String json = JsonConvert.SerializeObject(students, Formatting.Indented);
                 File.WriteAllText(fp, json);
             }
             catch(Exception e)
@@ -50,6 +50,7 @@ namespace Day17_JSON
             List<Student> students = JsonConvert.DeserializeObject<List<Student>>(File.ReadAllText(fp));
             return students;
         }
+
         public static void PrintList()
         {
             List<Student> list = GetList();
