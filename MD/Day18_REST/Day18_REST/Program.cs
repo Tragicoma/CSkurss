@@ -10,6 +10,7 @@ namespace Day18_REST
     {
         static void Main(string[] args)
         {
+            CreateList();
             String url = "https://my-json-server.typicode.com/Tragicoma/StudentServer2/db";
 
             WebClient client = new WebClient();
