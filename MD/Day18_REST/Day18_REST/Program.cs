@@ -10,7 +10,7 @@ namespace Day18_REST
     {
         static void Main(string[] args)
         {
-           //CreateList();
+            CreateList();
             String url = "https://my-json-server.typicode.com/Tragicoma/StudentServer2/db";
 
             WebClient client = new WebClient();
@@ -37,7 +37,7 @@ namespace Day18_REST
                 students.Add(new Student($"Janis{i}", "Berzins", random.Next(1, 4)));
             }
 
-            String json = JsonConvert.SerializeObject(students, Formatting.Indented);
+            String json = JsonConvert.SerializeObject(new DataStatus("succes",students), Formatting.Indented);
             File.WriteAllText(@"D:\Jauna mape\C#_Maaciibas\Rest\db.json", json);
         }
     }
