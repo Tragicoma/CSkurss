@@ -10,7 +10,7 @@ namespace Day21_Homework
             DBStuff DB = new DBStuff();
             DB.Connect();
             DB.GetStudents();
-            //EnterStudent(DB);
+            EnterStudent(DB);
             DeleteStudent(DB);
         }
 
